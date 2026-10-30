@@ -17,28 +17,33 @@
 
 ## Mục 3. Ảnh kết quả
 
-Ảnh chụp thực tế khi chạy ba ứng dụng được lưu trong `docs/`.
+Mỗi bài có đủ 5 ảnh theo nhóm: màn hình chính, quản lý dữ liệu, nghiệp vụ, báo cáo/thống kê và xử lý lỗi. Ảnh được lưu riêng theo bài trong thư mục docs/<bài>/images/.
 
 ### Bài 5.3 — Cafe POS
 
-![Sơ đồ bàn và gọi món](docs/01_cafe_pos.png)
-
-![Quản lý thực đơn](docs/02_cafe_menu.png)
+1. **Màn hình chính:** ![Sơ đồ bàn Cafe POS](docs/5.3-CafePOS/images/01_main_screen.png)
+2. **CRUD thực đơn:** ![Quản lý món và giá](docs/5.3-CafePOS/images/02_crud_screen.png)
+3. **Nghiệp vụ gọi món:** ![Đơn hàng trên bàn](docs/5.3-CafePOS/images/03_transaction_screen.png)
+4. **Báo cáo hóa đơn/doanh thu trong SQL Server:** ![Báo cáo Cafe POS](docs/5.3-CafePOS/images/04_report_screen.png)
+5. **Xử lý dữ liệu không hợp lệ:** ![Thông báo kiểm tra món](docs/5.3-CafePOS/images/05_error_handling.png)
 
 ### Bài 5.4 — Hotel Management
 
-![Lễ tân, check-in và phòng](docs/03_hotel_checkin.png)
-
-![Lọc phòng bằng DataView](docs/04_hotel_room_filter.png)
+1. **Màn hình chính lễ tân:** ![Tổng quan lễ tân](docs/5.4-HotelManagement/images/01_main_screen.png)
+2. **Danh sách và lọc phòng:** ![Danh sách phòng DataView](docs/5.4-HotelManagement/images/02_crud_screen.png)
+3. **Nghiệp vụ check-in:** ![Check-in khách](docs/5.4-HotelManagement/images/03_transaction_screen.png)
+4. **Báo cáo tình trạng phòng/doanh thu trong SQL Server:** ![Báo cáo khách sạn](docs/5.4-HotelManagement/images/04_report_screen.png)
+5. **Báo lỗi check-out phòng chưa nhận khách:** ![Xử lý lỗi lưu trú](docs/5.4-HotelManagement/images/05_error_handling.png)
 
 ### Bài 5.5 — Inventory Management
 
-![Quản lý vật tư và nhà cung cấp](docs/05_inventory_crud.png)
+1. **Màn hình chính vật tư:** ![Tổng quan tồn kho](docs/5.5-InventoryManagement/images/01_main_screen.png)
+2. **CRUD nhà cung cấp:** ![Quản lý nhà cung cấp](docs/5.5-InventoryManagement/images/02_crud_screen.png)
+3. **Nghiệp vụ lập phiếu kho:** ![Lập phiếu nhập](docs/5.5-InventoryManagement/images/03_transaction_screen.png)
+4. **Báo cáo và cảnh báo tồn kho:** ![Báo cáo tồn kho](docs/5.5-InventoryManagement/images/04_report_screen.png)
+5. **Rollback khi xuất vượt tồn:** ![Thông báo rollback](docs/5.5-InventoryManagement/images/05_error_handling.png)
 
-![Lập phiếu nhập xuất và báo cáo tồn kho](docs/06_inventory_voucher_report.png)
-
-Ảnh báo cáo kho ghi nhận một lần chạy thử lưu phiếu nhập 1 kg hạt cà phê, đơn giá 250.000 đ; dữ liệu tồn kho và phiếu kho được lưu trực tiếp trong SQL Server.
-
+Ảnh báo cáo kho ghi nhận phiếu nhập demo 1 kg hạt cà phê trị giá 250.000 đ. Bài khách sạn có một lượt check-in/check-out demo; báo cáo thể hiện dữ liệu đã lưu trên SQL Server.
 ## Mục 4. Chức năng chính
 
 ### 5.3 Cafe POS
