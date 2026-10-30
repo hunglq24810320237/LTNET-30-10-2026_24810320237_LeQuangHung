@@ -30,7 +30,7 @@ Mỗi bài có đủ 5 ảnh theo nhóm: màn hình chính, quản lý dữ li�
 ### Bài 5.4 — Hotel Management
 
 1. **Màn hình chính lễ tân:** ![Tổng quan lễ tân](docs/5.4-HotelManagement/images/01_main_screen.png)
-2. **Danh sách và lọc phòng:** ![Danh sách phòng DataView](docs/5.4-HotelManagement/images/02_crud_screen.png)
+2. **CRUD phòng:** ![Thêm, sửa, xóa và danh sách phòng](docs/5.4-HotelManagement/images/02_crud_screen.png)
 3. **Nghiệp vụ check-in:** ![Check-in khách](docs/5.4-HotelManagement/images/03_transaction_screen.png)
 4. **Báo cáo tình trạng phòng/doanh thu trong SQL Server:** ![Báo cáo khách sạn](docs/5.4-HotelManagement/images/04_report_screen.png)
 5. **Báo lỗi check-out phòng chưa nhận khách:** ![Xử lý lỗi lưu trú](docs/5.4-HotelManagement/images/05_error_handling.png)
@@ -43,7 +43,7 @@ Mỗi bài có đủ 5 ảnh theo nhóm: màn hình chính, quản lý dữ li�
 4. **Báo cáo và cảnh báo tồn kho:** ![Báo cáo tồn kho](docs/5.5-InventoryManagement/images/04_report_screen.png)
 5. **Rollback khi xuất vượt tồn:** ![Thông báo rollback](docs/5.5-InventoryManagement/images/05_error_handling.png)
 
-Ảnh báo cáo kho ghi nhận phiếu nhập demo 1 kg hạt cà phê trị giá 250.000 đ. Bài khách sạn có một lượt check-in/check-out demo; báo cáo thể hiện dữ liệu đã lưu trên SQL Server.
+Ảnh báo cáo kho ghi nhận phiếu nhập demo 1 kg hạt cà phê trị giá 250.000 đ. Bài khách sạn có hai lượt check-in/check-out demo; báo cáo thể hiện dữ liệu đã lưu trên SQL Server.
 ## Mục 4. Chức năng chính
 
 ### 5.3 Cafe POS
@@ -56,6 +56,7 @@ Mỗi bài có đủ 5 ảnh theo nhóm: màn hình chính, quản lý dữ li�
 ### 5.4 Hotel Management
 
 * Kiến trúc 3 tầng DTO–DAL–BUS–GUI.
+* CRUD phòng: thêm/cập nhật loại và giá phòng; xóa phòng khi không có lịch sử lưu trú.
 * Check-in tra khách bằng CCCD có `SqlParameter`; thêm khách mới khi chưa có.
 * Gọi dịch vụ trong thời gian lưu trú; checkout tính giờ phòng và dịch vụ trong `SqlTransaction`.
 * Lọc loại phòng/trạng thái cục bộ bằng `DataView`.

@@ -7,6 +7,12 @@ public sealed class HotelDal
     private const string Cs="Server=localhost\\SQLEXPRESS;Database=HotelDB;Integrated Security=True;TrustServerCertificate=True;Encrypt=False";
     private SqlConnection Open()=>new(Cs);
     public DataTable Rooms(){using var c=Open();using var a=new SqlDataAdapter("SELECT SoPhong,LoaiPhong,GiaTheoGio,TrangThai FROM dbo.Phong ORDER BY SoPhong",c);var d=new DataTable();a.Fill(d);return d;}
+    public void SaveRoom(string room,string type,decimal rate)
+    {
+        using var c=Open();using var cmd=new SqlCommand("IF EXISTS(SELECT 1 FROM dbo.Phong WHERE SoPhong=@room) UPDATE dbo.Phong SET LoaiPhong=@type,GiaTheoGio=@rate WHERE SoPhong=@room ELSE INSERT dbo.Phong(SoPhong,LoaiPhong,GiaTheoGio) VALUES(@room,@type,@rate)",c);
+        cmd.Parameters.Add("@room",SqlDbType.VarChar,10).Value=room;cmd.Parameters.Add("@type",SqlDbType.NVarChar,50).Value=type;cmd.Parameters.Add("@rate",SqlDbType.Decimal).Value=rate;cmd.Parameters["@rate"].Precision=18;cmd.Parameters["@rate"].Scale=2;cmd.ExecuteNonQuery();
+    }
+    public void DeleteRoom(string room){using var c=Open();using var cmd=new SqlCommand("DELETE dbo.Phong WHERE SoPhong=@room",c);cmd.Parameters.Add("@room",SqlDbType.VarChar,10).Value=room;cmd.ExecuteNonQuery();}
     public DataTable Services(){using var c=Open();using var a=new SqlDataAdapter("SELECT MaDV,TenDV,DonGia FROM dbo.DichVu ORDER BY TenDV",c);var d=new DataTable();a.Fill(d);return d;}
     public DataTable ActiveStays(){using var c=Open();using var a=new SqlDataAdapter("SELECT p.MaPhieu,p.SoPhong,k.HoTen,k.CCCD,p.NgayNhanPhong FROM dbo.PhieuDatPhong p JOIN dbo.KhachHang k ON k.MaKH=p.MaKH WHERE p.NgayTraPhong IS NULL ORDER BY p.NgayNhanPhong",c);var d=new DataTable();a.Fill(d);return d;}
     public void CheckIn(string room,string name,string cccd,string phone)
